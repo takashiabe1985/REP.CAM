@@ -1,7 +1,14 @@
 <div class="center jumbotron">
   <div class="text-center">
     <h1><%= @user.name %>のマイページ</h1>
-  </div>
+    <br>
+    <br>
+  　<%= link_to '新規投稿をする', new_post_path %>
+  </div>　
 </div>
 
-<%= render 'posts/posts', posts: @posts %>
+<div class="text-center">
+  <h1>MY STYLE一覧</h1>
+
+  <%= render 'posts/posts', posts: @posts %>
+</div>  
