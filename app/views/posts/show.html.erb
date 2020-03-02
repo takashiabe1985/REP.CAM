@@ -1,0 +1,29 @@
+<div class="center jumbotron">
+　<div class="text-center">
+  <h1><%= @post.id %> : 投稿詳細ページ</h1>
+  </div>
+</div>
+<div class="text-center">
+  <h3><br></h3>
+  
+  <h3>タイトル: <%= @post.title %></h3>
+  <br>
+  <h3>投稿説明: <%= @post.content %><br>
+  <br>
+  <br>
+  </h3>
+  <h1>
+    <br>
+      <%= link_to '編集する', edit_post_path(@post), class: 'btn btn-secondary' %>
+      <%= link_to '削除する', @post, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+    <br>
+    <br>
+    <br>
+  </h1>
+  <%= link_to 'マイページに戻る', user_path(current_user) %>
+  <h1>
+    <br>
+    <br>
+    <br>
+  </h1>
+</div> 

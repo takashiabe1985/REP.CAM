@@ -6,11 +6,14 @@
     </div>
   </div>
   <div class="text-center">
-   <%= link_to '新規投稿ページへ', posts/new_path, class: 'btn btn-lg btn-primary' %>
-    <div class="col-sm-8">
+   <%= link_to '新規投稿する', new_post_path, class: 'btn btn-lg btn-primary' %>
+   <br>
+   <br>
+   <br>
+   <h3>投稿一覧</h3>
+   <br>
     <%= render 'posts/posts', posts: @posts %>
-    </div>
-  </div>  
+   </div>  
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
