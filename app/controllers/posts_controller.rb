@@ -2,8 +2,12 @@ class PostsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
   
+  def new
+    @post = Post.new
+  end  
   
   def create
+    @post = Post.new(post_params)
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = '投稿しました。'

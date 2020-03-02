@@ -1,10 +1,25 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>REP.CAM</h1><br>
-    <p>repesent your campstyle</p>
-  </div>
-</div>
 
-<div class="text-center">
-      <%= render 'posts/posts', posts: @posts %>
-</div>
+<% if logged_in? %>
+ <div class="center jumbotron">
+    <div class="text-center">
+      <h1>REP.CAM</h1>
+    </div>
+  </div>
+  <div class="text-center">
+   <%= link_to '新規投稿ページへ', posts/new_path, class: 'btn btn-lg btn-primary' %>
+    <div class="col-sm-8">
+    <%= render 'posts/posts', posts: @posts %>
+    </div>
+  </div>  
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>REP.CAM</h1>
+    </div>
+  </div>
+  <div class="text-center">
+    <p>ユーザー登録をして、自慢のキャンプスタイルを投稿しよう！</p><br>
+    <p>↓　↓　↓　↓</p>
+      <%= link_to 'ユーザー登録', signup_path, class: 'btn btn-lg btn-primary' %>
+  </div>  
+<% end %>
