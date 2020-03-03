@@ -5,14 +5,22 @@
       <h1>REP.CAM</h1>
     </div>
   </div>
+  <h1>
+      <br>
+      <br>
+  </h1>
   <div class="text-center">
    <%= link_to '新規投稿する', new_post_path, class: 'btn btn-lg btn-primary' %>
-   <br>
-   <br>
-   <br>
-   <h3>投稿一覧</h3>
-   <br>
-    <%= render 'posts/posts', posts: @posts %>
+  <h1>
+    <br>
+    <br>
+  </h1>        
+  <h1>投稿一覧</h1>
+  <h3>
+    <br>
+    <br>
+  </h3>
+    <h4><%= render 'posts/posts', posts: @posts %></h4>
    </div>  
 <% else %>
   <div class="center jumbotron">

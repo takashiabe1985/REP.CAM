@@ -8,11 +8,20 @@
 
 <div class="text-center">
   <%= link_to '新規投稿する', new_post_path, class: 'btn btn-lg btn-primary' %>
+  <h1>
   <br>
   <br>
+  </h1>
+  <h2>MY STYLE一覧</h2>
   <br>
-  <h3>MY STYLE一覧</h3>
   <br>
-  <br>
-  <%= render 'posts/posts', posts: @posts %>
+  <h4><%= render 'posts/posts', posts: @posts %></h4>
+  <h1>
+    <br>
+  </h1>
+  <%= link_to 'トップページに戻る', root_path %>
+  <h1>
+    <br>
+  </h1>
 </div>  
+  

@@ -10,9 +10,12 @@
           <br>
           <%= f.text_field :title %>
           <br>
-          <%= f.label :image, '画像投稿' %>
-          <%= f.file_field :image %>
-          <%= f.submit 'アップロードする'%>
+          <br>
+            <%= f.label :image, '画像投稿' %>
+          <br>  
+            <%= f.file_field :image %>
+            <%= f.hidden_field :image_cache %>
+          <br>
           <br>
           <%= f.label :content, '投稿説明' %>
           <%= f.text_area :content, class: 'form-control', rows: 5 %>

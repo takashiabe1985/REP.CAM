@@ -3,7 +3,7 @@
   <h1>新規投稿ページ</h1>
   </div>
 </div>
-　<aside class="text-center">
+　<div class="text-center">
       <%= form_with(model: @post, local: true) do |f| %>
         <div class="form-group">
           <%= f.label :title, 'タイトル' %>
@@ -11,13 +11,25 @@
           <%= f.text_field :title %>
           <br>
           <br>
-          <%= f.file_field :image %>
-          <%= f.submit 'アップロードする'%>
+            <%= f.label :image, '画像投稿' %>
+          <br>  
+            <%= f.file_field :image %>
+            <%= f.hidden_field :image_cache %>
           <br>
           <br>
           <%= f.label :content, '投稿説明' %>
           <%= f.text_area :content, class: 'form-control', rows: 5 %>
         </div>
         <%= f.submit '投稿', class: 'btn btn-primary' %>
-    </aside>
-<% end %>  
+    <% end %>  
+
+    <h1>
+      <br>
+      <br>
+    </h1>    
+      <%= link_to 'トップページに戻る', root_path(current_user) %>
+    <h1>
+      <br>
+      <br>
+    </h1>
+  </div>  

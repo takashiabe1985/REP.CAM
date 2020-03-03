@@ -4,19 +4,30 @@
   </div>
 </div>
 <div class="text-center">
-  <h3><br></h3>
-  
-  <h3>タイトル: <%= @post.title %></h3>
+  <h1>
+    <br>
+    <br>
+  </h1>
+  <h4>タイトル</h4>
+  <h1>
+    <br>
+  </h1>
+  <h3><%= @post.title %></h3>
+  <h1>
+    <br>
+    <br>
+  </h1>
+    <%= image_tag @post.image.to_s %>
+  <h1>
+    <br>
+    <br>
+  </h1>
+  <h4>投稿説明</h4>
+  <h1>
+    <br>
+  </h1>
+  <h3><%= @post.content %></h3>
   <br>
-    <p>
-     <strong>Image</strong>
-       <%= image_tag @post.image.url if @post.image? &>
-    </p>   
-  <br>
-  <h3>投稿説明: <%= @post.content %><br>
-  <br>
-  <br>
-  </h3>
   <h1>
     <br>
       <%= link_to '編集する', edit_post_path(@post), class: 'btn btn-secondary' %>

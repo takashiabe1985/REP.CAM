@@ -5,8 +5,18 @@
         <div>
           <%= link_to post.id, post %> : <span class="text-muted">posted at <%= post.created_at %></span>
         </div>
+        <h5>
+          <br>
+        </h5>
         <div>
-          <p><%= post.title %></p>
+          <h4><%= post.title %></h4>
+          <h5>
+            <br>
+          </h5>  
+          <%= image_tag post.image.to_s %>
+          <h2>
+            <br>
+          </h2> 
         </div>
       </div>
     </li>
