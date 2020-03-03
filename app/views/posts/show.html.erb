@@ -8,6 +8,11 @@
   
   <h3>タイトル: <%= @post.title %></h3>
   <br>
+    <p>
+     <strong>Image</strong>
+       <%= image_tag @post.image.url if @post.image? &>
+    </p>   
+  <br>
   <h3>投稿説明: <%= @post.content %><br>
   <br>
   <br>
