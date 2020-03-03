@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy, :show, :update]
+  before_action :correct_user, only: [:destroy, :update]
   
   def new
     @post = Post.new

@@ -1,3 +1,4 @@
+<% if current_user = @user %>
 <div class="center jumbotron">
 　<div class="text-center">
   <h1><%= @post.id %> : 投稿詳細ページ</h1>
@@ -42,4 +43,48 @@
     <br>
     <br>
   </h1>
-</div> 
+</div>
+<% else %>
+<div class="center jumbotron">
+　<div class="text-center">
+  <h1><%= @post.id %> : 投稿詳細ページ</h1>
+  </div>
+</div>
+<div class="text-center">
+  <h1>
+    <br>
+    <br>
+  </h1>
+  <h4>タイトル</h4>
+  <h1>
+    <br>
+  </h1>
+  <h3><%= @post.title %></h3>
+  <h1>
+    <br>
+    <br>
+  </h1>
+    <%= image_tag @post.image.to_s %>
+  <h1>
+    <br>
+    <br>
+  </h1>
+  <h4>投稿説明</h4>
+  <h1>
+    <br>
+  </h1>
+  <h3><%= @post.content %></h3>
+  <br>
+  <h1>
+    
+    <br>
+    <br>
+  </h1>
+  <%= link_to 'トップページに戻る', root_path %>
+  <h1>
+    <br>
+    <br>
+    <br>
+  </h1>
+</div>
+<% end %>
