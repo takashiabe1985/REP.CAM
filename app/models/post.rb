@@ -6,5 +6,5 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { maximum: 255 }
   validates :title, presence: true, length: { maximum: 255 }
   
-  has_many :posts
+  has_many :users
 end

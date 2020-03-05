@@ -3,7 +3,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   
-  process :resize_to_limit => [640, 480]
+  process :resize_to_limit => [540, 360]
   process :convert => 'jpg'
   
   
@@ -35,14 +35,14 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
    version :thumb do
-     process :resize_to_limit => [300, 300]
+     process :resize_to_limit => [480, 320]
   end
   
-   version :thumb do
+   version :thumb100 do
      process :resize_to_limit => [100, 100]
   end
   
-   version :thumb do
+   version :thumb30 do
      process :resize_to_limit => [30, 30]
   end
 

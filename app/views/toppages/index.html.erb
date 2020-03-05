@@ -32,5 +32,22 @@
     <h2>ユーザー登録をして、自慢のキャンプスタイルを投稿しよう！</h2><br>
     <h2>↓　↓　↓　↓</h2>
       <%= link_to 'ユーザー登録', signup_path, class: 'btn btn-lg btn-primary' %>
+      <br>
+    <br>
+  </h1>
+  <h2>
+    <br>
+    <br>
+  </h2>
+  <h1>投稿一覧</h1>
+  <h3>
+    <br>
+    <br>
+  </h3>
+    <h4><%= render 'posts/posts', posts: @posts %></h4>
+  <h3>
+    <br>
+    <br>
+  </h3>
   </div>  
 <% end %>
