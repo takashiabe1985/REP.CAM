@@ -31,9 +31,12 @@
   <br>
   <h1>
     <br>
-      <%= link_to '編集する', edit_post_path(@post), class: 'btn btn-secondary' %>
-      <%= link_to '削除する', @post, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
-    <br>
+      <div>
+          <% if current_user == @post.user %>
+            <%= link_to '編集する', edit_post_path(@post), class: 'btn btn-secondary' %>
+            <%= link_to "削除する", @post, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'btn btn-danger' %>
+          <% end %>
+      </div>
     <br>
     <br>
   </h1>
