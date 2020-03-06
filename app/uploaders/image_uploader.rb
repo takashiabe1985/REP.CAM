@@ -3,7 +3,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   
-  process :resize_to_limit => [540, 360]
+ 
   process :convert => 'jpg'
   
   
@@ -34,17 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-   version :thumb do
-     process :resize_to_limit => [480, 320]
-  end
-  
-   version :thumb100 do
-     process :resize_to_limit => [100, 100]
-  end
-  
-   version :thumb30 do
-     process :resize_to_limit => [30, 30]
-  end
+   
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

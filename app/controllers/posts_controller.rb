@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy, :update, :edit, :index]
+  before_action :correct_user, only: [:destroy, :update, :edit]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def new
     @post = Post.new
@@ -20,26 +21,18 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     flash[:success] = '投稿を削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
   
-  def index
-    @post = Post.find(params[:id])
-  end  
-  
   def show
-    @post = Post.find(params[:id])
   end
   
   def edit
-    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
 
     if @post.update(post_params)
       flash[:success] = '投稿を編集しました'
@@ -49,17 +42,20 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-  
   private
 
   def post_params
     params.require(:post).permit(:content, :title, :image)
   end
   
+  def set_post
+    @post = Post.find(params[:id])
+  end
+  
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
     unless @post
-      redirect_to posts_url
+      redirect_to root_url
     end
   end
-end
+end  

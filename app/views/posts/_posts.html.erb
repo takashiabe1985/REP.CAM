@@ -1,3 +1,6 @@
+<div class="container">
+　  <div class="row">
+      <div class="col">
 <ul class="list-unstyled">
   <% posts.each do |post| %>
     <li class="media mb-3">
@@ -13,7 +16,7 @@
           <h5>
             <br>
           </h5>  
-          <%= image_tag post.image.url %>
+              <%= image_tag post.image.url, :width => '40%', :height => 'auto' %> 
           <h2>
             <br>
           </h2> 
@@ -23,3 +26,6 @@
   <% end %>
   <%= paginate posts %>
 </ul>
+    </div>
+  </div>
+</div>  

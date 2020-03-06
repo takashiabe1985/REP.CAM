@@ -1,8 +1,8 @@
 <% if logged_in? %>
 
-　<div class="img_block">
-    <%= image_tag "REP.CAM.jpg", alt:"" , id:"assets", class: "image", width: "1100px" %>
-  </div>  
+　
+    <%= image_tag "REP.CAM.jpg", alt:"" , id:"assets", class: "image", width: "100%" %>
+  
   <h1>
       <br>
       <br>
@@ -18,11 +18,14 @@
     <br>
     <br>
   </h3>
+<div class="container">
   <div class="center jumbotron">
-　  <div class="text-center">
-      <h4><%= render 'posts/posts', posts: @posts %></h4>
+　  <div class="row">
+      <div class="col">
+        <%= render 'posts/posts', posts: @posts %>
+      </div>
     </div>
-  </div>
+  </div>  
 </div>
 <% else %>
   <div class="img_block">
